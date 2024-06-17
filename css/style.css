@@ -1,0 +1,163 @@
+@font-face {
+	font-family: "OpenSans-Regular";
+	src: url("../media/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+	font-family: "OpenSans-SemiBold";
+	src: url("../media/fonts/OpenSans-SemiBold.ttf");
+}
+* {
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	cursor: default;
+	color: white;
+}
+
+.tab {
+	margin: 0 0.83;
+	transform: translateY(-0.23vw);
+}
+
+h2 {
+	font-size: 2.33vw;
+	font-family: "OpenSans-SemiBold";
+	font-weight: 900;
+	line-height: 3.33vw;
+	height: 3.33vw;
+	margin: auto 0;
+}
+
+h2.value {
+	font-size: 2vw;
+	font-weight: 600;
+	line-height: 2vw;
+	height: 2vw;
+}
+
+
+h3 {
+	font-size: 2.5vw;
+	font-family: "OpenSans-Regular";
+	font-weight: normal;
+}
+
+
+h4 {
+	font-size: 2vw;
+	font-family: "OpenSans-Regular";
+	font-weight: normal;
+}
+
+h5 {
+	font-size: 1.67vw;
+	font-family: "OpenSans-Regular";
+	font-weight: normal;
+}
+.events_item_info_name {
+	margin-left: 0.83vw;
+}
+body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #020322;
+}
+
+.body {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.events_item {
+	padding: 3.33vw;
+	border-radius: 3.33vw;
+	background-color: #292759;
+	margin: 10px 0 10px 0;
+}
+
+.img {
+	position: relative;
+}
+
+.img > img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.events_item_img {
+	width: 20vw;
+	height: 20vw;
+}
+.row {
+	display: flex;
+	width: 100%;
+}
+
+.events_item_info_authorImg {
+	width: 6.67vw;
+	height: 6.67vw;
+	border: 0.17vw solid white;
+	border-radius: 8.33vw;
+}
+
+.round > img {
+	border-radius: 16.7vw;
+}
+
+.events_item_info_main {
+	width: 80%;
+}
+
+
+.events_item_info_main > :first-child {
+	margin-bottom: 1.67vw;
+}
+.events_item_progress {
+	margin-top: 1.67vw;
+}
+
+.events_item_progress_icon {
+	width: 6.67vw;
+	height: 6.67vw;
+}
+
+.events_item_progress > :not(:last-child) {
+	margin-right: 2.5vw;
+}
+
+.events_item_progress_bar_line {
+	width: 50vw;
+	height: 2.5vw;
+	position: relative;
+	background-color: #020221;
+	border-radius: 3.33vw;
+	margin-top: 0.83vw;
+}
+.events_item_progress_bar_line_fill {
+	width: 33.3vw;
+	height: 2.5vw;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-color: #9c5dfc;
+	border-radius: 3.33vw;
+}
+.events_item_progress_bar_members {
+	margin-top: 1vw;
+	justify-content: space-between;
+}
+
+.events_item_progress_pool {
+	width: 8.35vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
