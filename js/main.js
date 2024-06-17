@@ -17,9 +17,7 @@ const walletConnectionSource = {
 
 
 const universalLink = connector.connect(walletConnectionSource);
-
-console.log(universalLink);
-console.log(connector.connected);
+location.href = universalLink;
 
 var target = null;
 var data_test = [
