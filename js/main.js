@@ -4,7 +4,7 @@ const connector = new TonConnectSDK.TonConnect({
 
 
 connector.onStatusChange(wallet => {
-    console.log(connector.connected);
+    console.log(connector);
 });
 
 
