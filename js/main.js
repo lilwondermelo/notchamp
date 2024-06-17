@@ -1,5 +1,5 @@
 const connector = new TonConnectSDK.TonConnect({
-    manifestUrl: 'https://raw.githubusercontent.com/lilwondermelo/notchampions/main/manifest.json'
+    manifestUrl: 'https://raw.githubusercontent.com/lilwondermelo/notchamp/main/manifest.json'
 });
 
 
