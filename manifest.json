@@ -1,5 +1,9 @@
 {
     "url": "https://lilwondermelo.github.io/notchamp",
     "name": "Notchamp",
-    "iconUrl": "https://raw.githubusercontent.com/lilwondermelo/notchamp/main/media/icons/favicon.png"
+    "iconUrl": "https://raw.githubusercontent.com/lilwondermelo/notchamp/main/media/icons/favicon.png",
+    "connect": {
+        "permissions": ["SendTransaction", "GetPublicKey"],
+        "network": "testnet"
+    }
 }
