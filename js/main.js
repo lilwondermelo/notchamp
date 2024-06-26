@@ -7,8 +7,8 @@ const connector = new TonConnectSDK.TonConnect({
 connector.onStatusChange(async wallet => {
     console.log(wallet);
     const rawAddress = wallet.account.address;  
-    const testnetOnlyBouncableUserFriendlyAddress = TonConnectSDK.toUserFriendlyAddress(rawAddress, true);
-    console.log(testnetOnlyBouncableUserFriendlyAddress);
+    const userFriendlyAddress = TonConnectSDK.toUserFriendlyAddress(rawAddress, true);
+    console.log(userFriendlyAddress);
 
     // Запрос баланса через TonAPI
     const apiUrl = `https://testnet.tonapi.io/v2/blockchain/accounts?${rawAddress}`;
