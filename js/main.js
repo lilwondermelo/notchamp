@@ -4,6 +4,7 @@ const connector = new TonConnectSDK.TonConnect({
 
 
 connector.onStatusChange(wallet => {
+    console.log(wallet);
     const rawAddress = wallet.account.address; 
     const testnetOnlyBouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress, true);
     console.log(testnetOnlyBouncableUserFriendlyAddress);
@@ -19,9 +20,7 @@ const walletConnectionSource = {
 
 
 const universalLink = connector.connect(walletConnectionSource);
-
 console.log(universalLink);
-console.log(connector.connected);
 
 var target = null;
 var data_test = [
@@ -109,7 +108,6 @@ function getLeagues() {
 }
 
 function drawLeagues(data) {
-    console.log(data);
     target = $('.events');
     for (var i = 0; i < data.length; i++) {
         target.append($('<div/>',{ "class": "events_item" }).append([
