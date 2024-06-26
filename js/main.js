@@ -2,7 +2,7 @@ const connector = new TonConnectSDK.TonConnect({
     manifestUrl: 'https://raw.githubusercontent.com/lilwondermelo/notchamp/main/manifest.json'
 });
 
-const version = 2;
+const version = 3;
 console.log('version: ' + version);
 
 connector.onStatusChange(async wallet => {
@@ -17,8 +17,8 @@ connector.onStatusChange(async wallet => {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        if (data.result) {
-            console.log(`Баланс кошелька ${userFriendlyAddress}: ${data.result.balance}`);
+        if (data) {
+            console.log(`Баланс кошелька ${userFriendlyAddress}: ${data.balance}`);
         } else {
             console.error('Ошибка при запросе баланса:', data);
         }
