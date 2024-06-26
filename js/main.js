@@ -11,7 +11,7 @@ connector.onStatusChange(async wallet => {
     console.log(testnetOnlyBouncableUserFriendlyAddress);
 
     // Запрос баланса через TonAPI
-    const apiUrl = `https://testnet.tonapi.io/v2/blockchain/config`;
+    const apiUrl = `https://testnet.tonapi.io/v2/blockchain/accounts?${rawAddress}`;
     
     try {
         const response = await fetch(apiUrl);
