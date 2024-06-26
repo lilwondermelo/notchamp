@@ -10,6 +10,7 @@ connector.onStatusChange(async wallet => {
     const rawAddress = wallet.account.address;  
     const userFriendlyAddress = TonConnectSDK.toUserFriendlyAddress(rawAddress, true);
     console.log(userFriendlyAddress);
+    localStorage.setItem('wallet', JSON.stringify(wallet));
 
     // Запрос баланса через TonAPI
     const apiUrl = `https://testnet.tonapi.io/v2/blockchain/accounts/${rawAddress}`;
@@ -28,18 +29,23 @@ connector.onStatusChange(async wallet => {
 
 
 });
-
-
-const walletsList = await connector.getWallets();
-
-const walletConnectionSource = {
-    universalLink: 'https://app.tonkeeper.com/ton-connect',
-    bridgeUrl: 'https://bridge.tonapi.io/bridge'
+const savedWallet = localStorage.getItem('wallet');
+if (savedWallet) {
+    const wallet = JSON.parse(savedWallet);
+    console.log('Сохраненные данные кошелька:', wallet);
+} else {
+    connectWallet();
 }
 
-
-const universalLink = connector.connect(walletConnectionSource);
-console.log(universalLink);
+async function connectWallet() {
+    const walletsList = await connector.getWallets();
+    const walletConnectionSource = {
+        universalLink: 'https://app.tonkeeper.com/ton-connect',
+        bridgeUrl: 'https://bridge.tonapi.io/bridge'
+    }
+    const universalLink = connector.connect(walletConnectionSource);
+    console.log(universalLink);
+}
 
 var target = null;
 var data_test = [
