@@ -4,12 +4,9 @@ const connector = new TonConnectSDK.TonConnect({
 
 
 connector.onStatusChange(wallet => {
-    const walletAddress = wallet.account.address;
-
-    const rawAddress = connector.wallet.account.address; 
+    const rawAddress = wallet.account.address; 
     const testnetOnlyBouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress, true);
     console.log(testnetOnlyBouncableUserFriendlyAddress);
-
 });
 
 
