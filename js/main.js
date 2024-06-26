@@ -4,8 +4,7 @@ const connector = new TonConnectSDK.TonConnect({
 
 
 connector.onStatusChange(wallet => {
-    console.log(1);
-    console.log(connector);
+    console.log(wallet);
 });
 
 
@@ -90,7 +89,6 @@ var data_test = [
     }
 ];
 drawLeagues(data_test);
-//getLeagues();
 
 
 function getLeagues() {
