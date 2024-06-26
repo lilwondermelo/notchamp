@@ -2,7 +2,7 @@ const connector = new TonConnectSDK.TonConnect({
     manifestUrl: 'https://raw.githubusercontent.com/lilwondermelo/notchamp/main/manifest.json'
 });
 
-const version = 1;
+const version = 2;
 console.log('version: ' + version);
 
 connector.onStatusChange(async wallet => {
@@ -12,7 +12,7 @@ connector.onStatusChange(async wallet => {
     console.log(userFriendlyAddress);
 
     // Запрос баланса через TonAPI
-    const apiUrl = `https://testnet.tonapi.io/v2/blockchain/accounts?${rawAddress}`;
+    const apiUrl = `https://testnet.tonapi.io/v2/blockchain/accounts/${rawAddress}`;
     
     try {
         const response = await fetch(apiUrl);
