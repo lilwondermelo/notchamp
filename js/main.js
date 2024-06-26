@@ -2,7 +2,7 @@ const connector = new TonConnectSDK.TonConnect({
     manifestUrl: 'https://raw.githubusercontent.com/lilwondermelo/notchamp/main/manifest.json'
 });
 
-const version = 3;
+const version = 4;
 console.log('version: ' + version);
 
 connector.onStatusChange(async wallet => {
