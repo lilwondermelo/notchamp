@@ -4,11 +4,28 @@ const connector = new TonConnectSDK.TonConnect({
 
 
 
-connector.onStatusChange(wallet => {
+connector.onStatusChange(async wallet => {
     console.log(wallet);
-    const rawAddress = wallet.account.address; 
+    const rawAddress = wallet.account.address;  
     const testnetOnlyBouncableUserFriendlyAddress = TonConnectSDK.toUserFriendlyAddress(rawAddress, true);
     console.log(testnetOnlyBouncableUserFriendlyAddress);
+
+    // Запрос баланса через TonAPI
+    const apiUrl = `https://testnet.tonapi.io/v2/blockchain/accounts?${testnetOnlyBouncableUserFriendlyAddress}`;
+    
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        if (data.result) {
+            console.log(`Баланс кошелька ${userFriendlyAddress}: ${data.result.balance}`);
+        } else {
+            console.error('Ошибка при запросе баланса:', data);
+        }
+    } catch (error) {
+        console.error('Ошибка при запросе баланса:', error);
+    }
+
+
 });
 
 
